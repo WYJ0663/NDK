@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="HelloNDK">
+
+    <property file="../ant.properties"/>
+
+    <target name="ndk-build">
+        <exec executable="${android.ndk}\ndk-build.cmd" failonerror="false">
+        </exec>
+    </target>
+
+    <target name="build">
+        <antcall target="JTest"></antcall>
+    </target>
+
+
+    <target name="JTest">
+        <javah destdir="${jni.dir}" classpath="src" class="com.example.hellojni.JTest"></javah>
+    </target>
+
+
+</project>
